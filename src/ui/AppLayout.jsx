@@ -1,4 +1,5 @@
 import Header from "./Header";
+import CartOverview from "../features/cart/CartOverview";
 
 export default function AppLayout() {
   return (
@@ -8,6 +9,8 @@ export default function AppLayout() {
       <main>
         <h1> Content </h1>
       </main>
+
+      <CartOverview />
     </div>
   );
 }
