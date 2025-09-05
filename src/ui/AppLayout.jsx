@@ -1,3 +1,13 @@
+import Header from "./Header";
+
 export default function AppLayout() {
-  return <div>AppLayout</div>;
+  return (
+    <div>
+      <Header />
+
+      <main>
+        <h1> Content </h1>
+      </main>
+    </div>
+  );
 }
