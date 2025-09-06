@@ -1,5 +1,6 @@
 // import { useState } from "react";
 import { Form } from "react-router-dom";
+import Cart from "../cart/Cart";
 
 // https://uibakery.io/regex-library/phone-number
 // const isValidPhone = (str) =>
@@ -71,6 +72,7 @@ function CreateOrder() {
         </div>
 
         <div>
+          <input type="hidden" name="cart" value={JSON.stringify(Cart)} />
           <button>Order now</button>
         </div>
       </Form>
@@ -80,7 +82,8 @@ function CreateOrder() {
 
 export async function action({ request }) {
   const formData = await request.formData();
-  console.log(formData);
+  const data = Object.fromEntries(formData);
+  console.log(data);
 
   return null;
 }
