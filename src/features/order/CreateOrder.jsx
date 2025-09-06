@@ -1,5 +1,5 @@
 // import { useState } from "react";
-import { Form, redirect } from "react-router-dom";
+import { Form, redirect, useNavigation } from "react-router-dom";
 import Cart from "../cart/Cart";
 import { createOrder } from "../../services/apiRestaurant";
 
@@ -9,33 +9,36 @@ import { createOrder } from "../../services/apiRestaurant";
 //     str
 //   );
 
-// const fakeCart = [
-//   {
-//     pizzaId: 12,
-//     name: "Mediterranean",
-//     quantity: 2,
-//     unitPrice: 16,
-//     totalPrice: 32,
-//   },
-//   {
-//     pizzaId: 6,
-//     name: "Vegetale",
-//     quantity: 1,
-//     unitPrice: 13,
-//     totalPrice: 13,
-//   },
-//   {
-//     pizzaId: 11,
-//     name: "Spinach and Mushroom",
-//     quantity: 1,
-//     unitPrice: 15,
-//     totalPrice: 15,
-//   },
-// ];
+const fakeCart = [
+  {
+    pizzaId: 12,
+    name: "Mediterranean",
+    quantity: 2,
+    unitPrice: 16,
+    totalPrice: 32,
+  },
+  {
+    pizzaId: 6,
+    name: "Vegetale",
+    quantity: 1,
+    unitPrice: 13,
+    totalPrice: 13,
+  },
+  {
+    pizzaId: 11,
+    name: "Spinach and Mushroom",
+    quantity: 1,
+    unitPrice: 15,
+    totalPrice: 15,
+  },
+];
 
 function CreateOrder() {
+  const navigation = useNavigation();
+  const isSubmitting = navigation.state === "submitting";
+
   // const [withPriority, setWithPriority] = useState(false);
-  // const cart = fakeCart;
+  const cart = fakeCart;
 
   return (
     <div>
@@ -74,7 +77,9 @@ function CreateOrder() {
 
         <div>
           <input type="hidden" name="cart" value={JSON.stringify(Cart)} />
-          <button>Order now</button>
+          <button disabled={isSubmitting}>
+            {isSubmitting ? "Placing order ..." : "Order now"}
+          </button>
         </div>
       </Form>
     </div>
