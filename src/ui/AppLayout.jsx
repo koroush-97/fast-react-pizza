@@ -13,7 +13,7 @@ export default function AppLayout() {
 
       <Header />
     <div className="overflow-y-auto ">
-        <main className="mx-auto max-w-3xl bg-red-500">
+        <main className="mx-auto max-w-3xl ">
         <Outlet />
       </main>
 
