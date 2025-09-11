@@ -1,6 +1,6 @@
  function Username() {
   return (
-    <div>
+    <div className="text-sm font-semibold" >
         Korosh
     </div>
   )
