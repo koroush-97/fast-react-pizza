@@ -7,8 +7,7 @@ export default function Header() {
       <Link to="/"  className="uppercase tracking-widest"> Fast React Pizza Co. </Link>
 
       <SearchOrder />
-
-      <p>koroush</p>
+      <SearchOrder />
     </header>
   );
 }
