@@ -1,3 +1,4 @@
+import Button from '../../ui/Button';
 import { formatCurrency } from '../../utils/helpers';
 // eslint-disable-next-line
 function MenuItem({ pizza }) {
@@ -11,13 +12,13 @@ function MenuItem({ pizza }) {
         alt={name}
         className={`h-24 ${soldOut ? 'opacity-70 grayscale' : ''}`}
       />
-      <div className="flex flex-col">
+      <div className="flex grow flex-col">
         <p className="font-medium">{name}</p>
-        <p className="text-sm italic text-stone-500">
+        <p className="text-sm capitalize italic text-stone-500">
           {/* eslint-disable-next-line */}
           {ingredients.join(', ')}
         </p>
-        <div className="mt-auto">
+        <div className="mt-auto flex items-center justify-between">
           {!soldOut ? (
             <p className="text-sm">{formatCurrency(unitPrice)}</p>
           ) : (
@@ -25,6 +26,8 @@ function MenuItem({ pizza }) {
               Sold out
             </p>
           )}
+
+          <Button> Add to cart </Button>
         </div>
       </div>
     </li>
