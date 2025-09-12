@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        robotoMono: ["'Roboto Mono'", 'monospace'],
+        sans: ["'Roboto Mono'", 'monospace'],
       },
     },
   },
