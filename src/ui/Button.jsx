@@ -1,11 +1,8 @@
-import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-Button.propTypes = {
-  children: PropTypes.node.isRequired,
-  disabled: PropTypes.bool,
-};
-
-function Button({ children, disabled }) {
+// eslint-disable-next-line react/prop-types
+function Button({ children, disabled, to }) {
+  if (to) return <Link>{children}</Link>;
   return (
     <button
       disabled={disabled}
