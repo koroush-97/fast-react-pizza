@@ -25,7 +25,7 @@ function Order() {
   return (
     <div className="space-y-8 px-4 py-6">
       <div className="flex flex-wrap items-center justify-between">
-        <h2 className="text-xl font-semibold">Order # {id} status</h2>
+        <h2 className="gap-2 text-xl font-semibold">Order # {id} status</h2>
 
         <div className="space-x-2">
           {priority && (
@@ -39,13 +39,15 @@ function Order() {
         </div>
       </div>
 
-      <div className="flex flex-wrap items-center justify-between">
-        <p>
+      <div className="flex flex-wrap items-center justify-between gap-2 bg-stone-200 py-5">
+        <p className="font-medium">
           {deliveryIn >= 0
             ? `Only ${calcMinutesLeft(estimatedDelivery)} minutes left 😃`
             : 'Order should have arrived'}
         </p>
-        <p>(Estimated delivery: {formatDate(estimatedDelivery)})</p>
+        <p className="text-xs text-stone-500">
+          (Estimated delivery: {formatDate(estimatedDelivery)})
+        </p>
       </div>
 
       <div>
