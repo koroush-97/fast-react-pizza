@@ -23,7 +23,7 @@ function Order() {
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
 
   return (
-    <div className="px-4 py-6">
+    <div className="space-y-8 px-4 py-6">
       <div>
         <h2>Status</h2>
 
