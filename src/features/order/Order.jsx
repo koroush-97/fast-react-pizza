@@ -29,15 +29,17 @@ function Order() {
 
         <div className="space-x-2">
           {priority && (
-            <span className="rounded-full bg-red-500 px-3 py-1 text-sm font-semibold uppercase">
+            <span className="rounded-full bg-red-500 px-3 py-1 text-sm font-semibold uppercase tracking-wide text-red-50">
               Priority
             </span>
           )}
-          <span>{status} order</span>
+          <span className="rounded-full bg-green-500 px-3 py-1 text-sm font-semibold uppercase tracking-wide text-green-50">
+            {status} order
+          </span>
         </div>
       </div>
 
-      <div>
+      <div className="flex flex-wrap items-center justify-between">
         <p>
           {deliveryIn >= 0
             ? `Only ${calcMinutesLeft(estimatedDelivery)} minutes left 😃`
