@@ -1,5 +1,5 @@
 // Test ID: IIDSAT
-
+import OrderItem from './OrderItem';
 import { useLoaderData } from 'react-router-dom';
 import { getOrder } from '../../services/apiRestaurant';
 import {
@@ -18,7 +18,7 @@ function Order() {
     priorityPrice,
     orderPrice,
     estimatedDelivery,
-    // cart,
+    cart,
   } = order;
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
 
@@ -49,6 +49,12 @@ function Order() {
           (Estimated delivery: {formatDate(estimatedDelivery)})
         </p>
       </div>
+
+      <ul className="dive-stone-200 divide-y border-b border-t">
+        {cart.map((item) => (
+          <OrderItem item={item} key={item.id} />
+        ))}
+      </ul>
 
       <div className="space-y-2 bg-stone-200 px-6 py-5">
         <p className="text-sm font-medium text-stone-600">
