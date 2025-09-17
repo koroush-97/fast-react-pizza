@@ -5,6 +5,16 @@ function MenuItem({ pizza }) {
   // eslint-disable-next-line
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
 
+  function handleAddToCart() {
+    const newItem = {
+      pizzaId: id,
+      name,
+      quantity: 1,
+      unitPrice,
+      totalPrice: unitPrice * 1,
+    };
+  }
+
   return (
     <li className="flex gap-4 py-2">
       <img
