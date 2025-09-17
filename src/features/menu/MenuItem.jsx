@@ -1,7 +1,10 @@
+import { useDispatch } from 'react-redux';
 import Button from '../../ui/Button';
 import { formatCurrency } from '../../utils/helpers';
+import { addItem } from '../cart/cartSlice';
 // eslint-disable-next-line
 function MenuItem({ pizza }) {
+  const dispatch = useDispatch();
   // eslint-disable-next-line
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
 
@@ -13,6 +16,7 @@ function MenuItem({ pizza }) {
       unitPrice,
       totalPrice: unitPrice * 1,
     };
+    dispatch(addItem(newItem));
   }
 
   return (
