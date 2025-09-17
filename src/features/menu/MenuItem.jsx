@@ -27,7 +27,12 @@ function MenuItem({ pizza }) {
             </p>
           )}
 
-          {!soldOut && <Button type="small"> Add to cart </Button>}
+          {!soldOut && (
+            <Button type="small" onClick={handleAddToCart}>
+              {' '}
+              Add to cart{' '}
+            </Button>
+          )}
         </div>
       </div>
     </li>
