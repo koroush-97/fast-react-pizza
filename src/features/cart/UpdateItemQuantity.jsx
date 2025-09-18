@@ -1,6 +1,6 @@
 import Button from '../../ui/Button';
-
-function UpdateItemQuantity({ pizzaId }) {
+// eslint-disable-next-line
+export default function UpdateItemQuantity({ pizzaId }) {
   return (
     <div>
       <Button type="round">-</Button>
@@ -8,5 +8,3 @@ function UpdateItemQuantity({ pizzaId }) {
     </div>
   );
 }
-
-export default UpdateItemQuantity;
