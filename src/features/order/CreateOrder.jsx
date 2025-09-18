@@ -1,9 +1,8 @@
 // import { useState } from "react";
 import { Form, useActionData, useNavigation } from 'react-router-dom';
 import Button from '../../ui/Button';
-
 import { useSelector } from 'react-redux';
-
+import { getCart } from '../cart/cartSlice';
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
   /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(
@@ -43,7 +42,7 @@ function CreateOrder() {
   const formErrors = useActionData();
 
   // const [withPriority, setWithPriority] = useState(false);
-  const cart = fakeCart;
+  const cart = useSelector(getCart);
 
   return (
     <div className="px-4 py-6">
