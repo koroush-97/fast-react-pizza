@@ -2,9 +2,11 @@
 import { Form, useActionData, useNavigation, redirect } from 'react-router-dom';
 import Button from '../../ui/Button';
 import { useSelector } from 'react-redux';
-import { getCart } from '../cart/cartSlice';
+import { clearCart, getCart } from '../cart/cartSlice';
 import EmptyCart from '../cart/EmptyCart';
 import { createOrder } from '../../services/apiRestaurant';
+import store from '../../store/Store';
+
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
   /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(
@@ -110,6 +112,8 @@ export async function action({ request }) {
   if (Object.keys(errors).length > 0) return errors;
 
   const newOrder = await createOrder(order);
+
+  store.dispatch(clearCart());
 
   return redirect(`/order/${newOrder.id}`);
 }
