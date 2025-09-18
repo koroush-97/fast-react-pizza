@@ -1,4 +1,3 @@
-import Button from '../../ui/Button';
 import { formatCurrency } from '../../utils/helpers';
 import DeleteItem from './DeleteItem';
 // eslint-disable-next-line react/prop-types
