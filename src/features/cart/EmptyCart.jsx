@@ -5,7 +5,9 @@ function EmptyCart() {
     <div>
       <LinkButton to="/menu">&larr; Back to menu</LinkButton>
 
-      <p>Your cart is still empty. Start adding some pizzas :)</p>
+      <p className="font-semibold">
+        Your cart is still empty. Start adding some pizzas :)
+      </p>
     </div>
   );
 }
