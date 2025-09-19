@@ -79,19 +79,21 @@ function CreateOrder() {
               required
             />
           </div>
-          <span className="absolute right-[1px] z-50">
-            <Button
-              disabled={isLoadingAddress}
-              type="primary"
-              onClick={(e) => {
-                e.preventDefault();
-                dispatch(fetchAddress());
-              }}
-            >
-              {' '}
-              Get position{' '}
-            </Button>
-          </span>
+          {!position.latitude && !position.longitude && (
+            <span className="absolute right-[1px] z-50">
+              <Button
+                disabled={isLoadingAddress}
+                type="primary"
+                onClick={(e) => {
+                  e.preventDefault();
+                  dispatch(fetchAddress());
+                }}
+              >
+                {' '}
+                Get position{' '}
+              </Button>
+            </span>
+          )}
         </div>
 
         <div className="mb-12 flex items-center gap-5">
