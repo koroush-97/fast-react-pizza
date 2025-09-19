@@ -78,6 +78,11 @@ function CreateOrder() {
               defaultValue={address}
               required
             />
+            {addressStatus === 'error' && (
+              <p className="mt-2 rounded-full bg-red-100 p-2 text-xs text-red-700">
+                {formErrors.phone}
+              </p>
+            )}
           </div>
           {!position.latitude && !position.longitude && (
             <span className="absolute right-[1px] z-50">
