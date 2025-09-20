@@ -93,7 +93,7 @@ function Order() {
     </div>
   );
 }
-
+// eslint-disable-next-line
 export async function loader({ params }) {
   const order = await getOrder(params.orderId);
   return order;

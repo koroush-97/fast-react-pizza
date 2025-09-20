@@ -45,6 +45,7 @@ const userSlice = createSlice({
   },
   extraReducers: (builder) =>
     builder
+      // eslint-disable-next-line
       .addCase(fetchAddress.pending, (state, action) => {
         state.status = 'loading';
       })
@@ -52,7 +53,7 @@ const userSlice = createSlice({
         state.position = action.payload.position;
         state.address = action.payload.address;
         state.status = 'idle';
-      })
+      }) // eslint-disable-next-line
       .addCase(fetchAddress.rejected, (state, action) => {
         state.status = 'error';
         state.error =
