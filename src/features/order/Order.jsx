@@ -16,7 +16,7 @@ function Order() {
 
   useEffect(
     function () {
-      if (!fetcher.data && fetcher.idle === 'idle') fetcher.load('/menu');
+      if (!fetcher.data && fetcher.state === 'idle') fetcher.load('/menu');
     },
     [fetcher],
   );
@@ -63,7 +63,11 @@ function Order() {
 
       <ul className="dive-stone-200 divide-y border-b border-t">
         {cart.map((item) => (
-          <OrderItem item={item} key={item.pizzaId} />
+          <OrderItem
+            item={item}
+            key={item.pizzaId}
+            ingredients={fetcher.data?.find((el) => el.id === item.pizzaId)}
+          />
         ))}
       </ul>
 
