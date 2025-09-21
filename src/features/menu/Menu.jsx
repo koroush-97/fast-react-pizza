@@ -13,7 +13,7 @@ function Menu() {
     </ul>
   );
 }
-
+//add loader function to fetch and return menu
 export async function loader() {
   const menu = await getMenu();
   return menu;
